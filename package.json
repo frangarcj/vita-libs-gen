@@ -1,0 +1,14 @@
+{
+  "name": "vita-libs-gen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "vita-libs-gen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.8.1"
+  }
+}

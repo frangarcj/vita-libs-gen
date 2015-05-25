@@ -11,11 +11,15 @@ var program = require('commander');
 
 program
     .version(pkg.version)
-    .option('-p, --port <port>', 'Port on which to listen to (defaults to 3000)', parseInt)
+    .parse(process.argv);
+program
+    .version(pkg.version)
+    .usage('<filename>')
     .parse(process.argv);
 
-var port = program.port || 3000;
-
+if(!program.args.length) {
+    program.help();
+} 
 
 var fs = require('fs');
 var obj = JSON.parse(fs.readFileSync(path.join(__dirname,'library.json')));
@@ -70,4 +74,3 @@ for(var i in obj) {
     console.log("Creating "+sce_module.name+".S");
   }
 }
-console.log('Cute files is running on port ' + obj);
